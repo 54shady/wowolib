@@ -75,14 +75,14 @@ int main(int argc, char **argv)
 		devmem_readsb(addr, (void *)buf, count);
 
 		for (i = 0; i < count; i++)
-			INFO("0x%08lx ~~ 0x%02x\n", addr + i, *(buf + i));
+			INFO("reg[0x%08lx] ==> val[0x%02x]\n", addr + i, *(buf + i));
 		break;
 
 	case 16:
 		devmem_readsw(addr, (void *)buf, count);
 
 		for (i = 0; i < count; i++)
-			INFO("0x%08lx ~~ 0x%04x\n", addr + i * 2,
+			INFO("reg[0x%08lx] ==> val[0x%04x]\n", addr + i * 2,
 				*((unsigned short *)(buf + i * 2)));
 		break;
 
@@ -90,7 +90,7 @@ int main(int argc, char **argv)
 		devmem_readsl(addr, (void *)buf, count);
 
 		for (i = 0; i < count; i++)
-			INFO("0x%08lx ~~ 0x%08x\n", addr + i * 4,
+			INFO("reg[0x%08lx] ==> val[0x%08x]\n", addr + i * 4,
 				*((unsigned int *)(buf + i * 4)));
 		break;
 
@@ -98,7 +98,7 @@ int main(int argc, char **argv)
 		devmem_readsq(addr, (void *)buf, count);
 
 		for (i = 0; i < count; i++)
-			INFO("0x%08lx ~~ 0x%08lx\n", addr + i * 8,
+			INFO("reg[0x%08lx] ==> val[0x%08lx]\n", addr + i * 8,
 				*((unsigned long *)(buf + i * 8)));
 		break;
 
